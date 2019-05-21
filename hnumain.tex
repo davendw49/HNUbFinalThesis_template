@@ -1,0 +1,53 @@
+% !TEX program = pdflatex
+% !Mode:: "TeX:UTF-8"
+\documentclass[a4paper,oneside]{book}
+\input{setup/package}                      % 定义本文所使用宏包
+\graphicspath{{figures/}}                  % 定义所有的.eps文件在figures子目录下
+\begin{document}                           % 开始全文
+\input{setup/format}                       % 完成对论文各个部分格式的设置
+\frontmatter                               % 以下是论文导言部分，包括论文的封面，中英文摘要和中文目录
+\input{cover/cover}                      % 封面
+%%%%%%%%%%   开始目录   %%%%%%%%%%
+\defaultfont
+\addcontentsline{toc}{chapter}{目~~~~录}
+\tableofcontents                           % 中文目录
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\newcommand{\loflabel}{图~}
+\renewcommand{\numberline}[1]{\song\xiaosi\loflabel~#1\hspace*{\baselineskip}}
+\addcontentsline{toc}{chapter}{插图索引}
+\listoffigures
+\clearpage
+\newcommand{\lotlabel}{表~}
+\renewcommand{\numberline}[1]{\song\xiaosi\lotlabel~#1\hspace*{\baselineskip}}
+\addcontentsline{toc}{chapter}{附表索引}
+\listoftables
+\clearpage{\pagestyle{empty}\cleardoublepage}
+%%%%%%%%%%   结束目录   %%%%%%%%%%
+
+%%%%%%%%%% 开始正文部分内容  %%%%%%%%%%
+\mainmatter\defaultfont\sloppy\raggedbottom
+\renewcommand{\ALC@linenosize}{\xiaosi}
+\renewcommand\arraystretch{1.5}
+\setlength{\intextsep}{2pt}
+\setlength{\abovecaptionskip}{2pt}
+\setlength{\belowcaptionskip}{2pt}
+\include{body/intros}
+\include{body/figures}
+\include{body/tables}
+\include{body/equations}
+\include{body/others}
+\include{body/conclusion}
+%%%%%%%%%% 结束正文部分内容  %%%%%%%%%%
+
+%%%%%%%%%%  开始参考文献  %%%%%%%%%%
+\defaultfont
+\bibliographystyle{HNUThesis}
+\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}          % 参考文献加入到中文目录
+%\nocite{*}                                        % 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中。
+\bibliography{references}
+\include{appendix/publications}                   % 发表论文和参加科研情况说明
+\include{appendix/acknowledgements}               % 致谢
+\clearpage
+%%%%%%%%%%  结束参考文献  %%%%%%%%%%
+\end{document}                                    % 结束全文
