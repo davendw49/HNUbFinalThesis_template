@@ -1,13 +1,27 @@
-# HNUthesis_master
+# HNUThesisTemplate
 
-湖南大学硕士学位论文Latex模版
+From Repo:[HNUThesis](http://hnuthesis.googlecode.com/)&[HNUThesisTemplate](https://github.com/leaf-hsiao/HNUThesisTemplate)&[Nian Liu's](https://github.com/He11oLiu/HNUThesisTemplate)&[ljmdzyx1985](https://github.com/ljmdzyx1985/HNUthesis_master)
 
-原版作者杜佳宜博士说明:
+> the same as Nian Liu's Repo
+## Basic Settings
 
-HNUThesis是为了帮助湖南大学毕业生撰写毕业论文而编写的LaTeX论文模板，其前提是用户已经能处理一般的LaTeX文档，并对BibTeX有一定了解，如果你从来没有接触过LaTeX，建议先学习相关基础知识，磨刀不误砍柴工，能有助你更好使用模板。
+封面/摘要相关设置在`./cover/cover.tex`中修改
 
-由于个人水平有限，虽然现在的这个版本基本上满足了学校的要求，但难免存在不足之处，欢迎大家积极反馈，更希望湖南大学LaTeX爱好者能一同完善此模板，让更多同学受益。
+对应章节在`./body/`中书写
 
-如有模板的疑问或有意向加入模板的维护和编写队伍中来，可以给原始作者: maxdujiayi@gmail.com(杜家宜)写信。
+文献管理利用`BibTex`
 
-本人在杜博原来V7.0版本的基础上，修正了部分Bug。有使用中的问题也欢迎和我交流，ljmdzyx@163.com
+## How to Build
+
+利用`pdflatex`编译，目前是在windows下texstudio搭档texlive2018版本的环境下进行编译的，不同的环境会有些许的不同
+
+## 符合新要求的页眉
+
+变得简单了，但是细致化的要求多了
+![](./figures/readm.png)
+
+## 符合要求的参考文献
+
+在胡海星同学的 GB/T 7714-2005 规范参考文献下刘年同学修改为符合湖南大学 GB/T 7714-87 标准的引用
+
+但是这种要求每年都在改现在又被我改成了这样，所有就这样吧！
